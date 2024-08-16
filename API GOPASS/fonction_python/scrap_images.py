@@ -42,15 +42,15 @@ def main():
     def login_to_site(driver):
         identifiant, password = log()
         # Ouvrir la page de connexion
-        driver.get("https://ardashboard.vlq16.iliad.fr/")
+        driver.get("")
 
         # Temps d'attente entre chaque action
         tps = 1
 
         # Identification
-        identifiant_textfield = driver.find_element(By.ID, "11")
-        password_textfield = driver.find_element(By.ID, "12")
-        login_button = driver.find_element(By.ID, "13")
+        identifiant_textfield = driver.find_element(By.ID, "")
+        password_textfield = driver.find_element(By.ID, "")
+        login_button = driver.find_element(By.ID, "")
 
         time.sleep(tps)
         identifiant_textfield.send_keys(identifiant)
@@ -65,13 +65,13 @@ def main():
 
         # SELECTIONNER LA REF (UNIQUE)
         time.sleep(tps+2)
-        driver.find_element(By.XPATH, '//*[@id="7_form"]/table/thead/tr/td[2]/div[1]/i').click()
+        driver.find_element(By.XPATH, '').click()
         time.sleep(tps)
-        driver.find_element(By.XPATH, '//*[@id="search_8"]').click()
+        driver.find_element(By.XPATH, '').click()
         time.sleep(tps + tps)
     
         # Trouver la case de texte où entrer la valeur de `inter`
-        search_textfield = driver.find_element(By.XPATH, '//*[@id="search_8"]')
+        search_textfield = driver.find_element(By.XPATH, '')
         
         # Effacer tout texte existant dans le champ de texte (facultatif)
         search_textfield.clear()
@@ -79,11 +79,11 @@ def main():
         # Entrer la valeur de `inter` dans la case de texte
         search_textfield.send_keys(inter)
         time.sleep(tps)
-        driver.find_element(By.XPATH, '//*[@id="7_form"]/table/thead/tr/td[2]/div[2]/table/tbody/tr/td[2]/button').click()
+        driver.find_element(By.XPATH, '').click()
         time.sleep(tps)
-        driver.find_element(By.XPATH, '//*[@id="7_form"]/table/tbody/tr/td[1]/a[1]').click()
+        driver.find_element(By.XPATH, '').click()
         time.sleep(tps)
-        driver.find_element(By.XPATH, '//*[@id="recup_info"]').click()
+        driver.find_element(By.XPATH, '').click()
         time.sleep(tps)
 
     def download_PTO(driver, inter):
@@ -99,7 +99,7 @@ def main():
             os.makedirs(jeton_directory)
 
         # Trouver tous les éléments <div> avec la classe "label"
-        labels = soup.find_all('div', class_='label')
+        labels = soup.find_all('div', class_='')
 
         pto_text = None
         # Parcourir les éléments pour trouver celui contenant "PTO :"
@@ -111,7 +111,7 @@ def main():
         return pto_text
 
     def download_images(driver, inter):
-        driver.find_element(By.XPATH, '//*[@id="label-tab-14"]/div').click()
+        driver.find_element(By.XPATH, '').click()
         time.sleep(1)
         # Récupérer le contenu HTML de la nouvelle page
         html_content = driver.page_source
@@ -154,7 +154,7 @@ def main():
     # Boucle sur toutes les interventions
     for inter in df['Référence']:
         # Ouvrir une nouvelle fenêtre pour l'intervention
-        driver.execute_script(f"window.open('https://ardashboard.vlq16.iliad.fr/');")
+        driver.execute_script(f"")
 
         # Basculer sur la nouvelle fenêtre
         driver.switch_to.window(driver.window_handles[-1])
