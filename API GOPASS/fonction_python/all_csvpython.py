@@ -93,7 +93,7 @@ def connect_and_fill_date(url, identifiant, password, adresse, adresse2):
         login_button.click()
         time.sleep(10)
 
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="7_form"]/table/thead/tr/td[13]/div[1]/i'))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, 
 
         # Obtenir la date et l'heure actuelles, puis soustraire 1 jour et 360 minutes
         # date_veille = datetime.now() - timedelta(days=1)
@@ -104,13 +104,13 @@ def connect_and_fill_date(url, identifiant, password, adresse, adresse2):
 
         today = datetime.now().strftime("%d/%m/%Y")
 
-        date_input = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="date-filter-19-value"]')))
+        date_input = wait.until(EC.presence_of_element_located((By.XPATH, '')))
         date_input.send_keys(today)
         date_input.send_keys(Keys.ENTER)
         time.sleep(tps)
 
         try:
-            submit_button = driver.find_element(By.XPATH, '//*[@id="date-filter-19-button"]')
+            submit_button = driver.find_element(By.XPATH, '')
             if submit_button.is_displayed() and submit_button.is_enabled():
                 submit_button.click()
             else:
@@ -121,18 +121,18 @@ def connect_and_fill_date(url, identifiant, password, adresse, adresse2):
 
         time.sleep(5)
 
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="7_form"]/table/thead/tr/td[15]/div[1]/i'))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
 
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="date-filter-21"]'))).click()
-        select = Select(driver.find_element(By.ID, 'date-filter-21'))
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
+        select = Select(driver.find_element(By.ID, ''))
         select.select_by_visible_text('<')
         heure_actuel_moins_temps = datetime.now() #- timedelta(days=0, minutes=00)
         heure_actuel_moins_temps_str = heure_actuel_moins_temps.strftime('%d/%m/%Y %H:%M:%S')
-        driver.find_element(By.XPATH, '//*[@id="date-filter-21-value"]').send_keys(heure_actuel_moins_temps_str)
-        driver.find_element(By.XPATH, '//*[@id="date-filter-21-value"]').send_keys(Keys.ENTER)
+        driver.find_element(By.XPATH, '').send_keys(heure_actuel_moins_temps_str)
+        driver.find_element(By.XPATH, '').send_keys(Keys.ENTER)
         time.sleep(tps)
         
-        submit_button_2 = driver.find_element(By.XPATH, '//*[@id="date-filter-21-button"]')
+        submit_button_2 = driver.find_element(By.XPATH, '')
         if submit_button_2.is_displayed() and submit_button_2.is_enabled():
             submit_button_2.click()
         else:
@@ -141,16 +141,16 @@ def connect_and_fill_date(url, identifiant, password, adresse, adresse2):
 
         print("Dates remplies et soumises avec succès")
 
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="button_list_exportcsv"]'))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
 
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="exportlist_item_6"]'))).click()
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="exportlist_item_8"]'))).click()
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="exportlist_item_9"]'))).click()
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="exportlist_item_10"]'))).click()
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="exportlist_item_14"]'))).click()
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="exportlist_item_25"]'))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
 
-        wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="profilswitcher-content"]/div/div[5]/button[2]'))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, ''))).click()
         time.sleep(tps)
         seconds = 0
         start=time.time()
