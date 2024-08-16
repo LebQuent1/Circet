@@ -1,0 +1,25 @@
+Améliorations à apporter:
+
+ajout de la région : à obtenir à partir des départements grace à une table d'associations.
+    voir pour obtenir la requête a effectuer vers l'API.
+
+ajout du stit : voir où obtenir l'info (pas dispo sur ard2 ou abborraco ).
+                un registre est apparement en train d'être mis en place.
+                voir pour obtenir la requête a effectuer vers l'API.
+
+ajout type de clôture : (si PTO)
+                        à scrap sur GRDV (statut), ajouter me traitement pour l'envois
+                        voir pour obtenir la requête a effectuer vers l'API.
+
+enlever du scrap_images la partie visant a répertorier les numéros de PTO (sauf si utile pour récupérer le type de cloture de l'inter)
+qui pourrais faire gagner un peu de temps à la partie scrap_images
+
+
+AMELIORATIONS:
+
+    - ajouter multithreading pour scrap_image / scrap_nom  (pas forcement utile pour les requêtes à l'API la seule prenant du temps est celle d'envois des images testrequetePHOTO).
+
+    - Modularisation : Réorganiser les scripts en modules réutilisables pour améliorer la maintenabilité.
+
+    - Interface utilisateur : Ajouter une interface graphique pour faciliter l'utilisation des scripts par des utilisateurs non techniques.
+    
