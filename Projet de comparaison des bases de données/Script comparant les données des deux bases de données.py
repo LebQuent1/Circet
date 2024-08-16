@@ -8,9 +8,9 @@ import os
 folder_path = os.getcwd()
 
 # Chemins des fichiers CSV et JSON
-csv_file_1 = os.path.join(folder_path, "Exporter_litiges_FREE_-_CAN.csv")
-csv_file_2 = os.path.join(folder_path, "Exporter_Malfaçons_-_CAN.csv")
-json_file = os.path.join(folder_path, "combined_tickets.json")
+csv_file_1 = os.path.join(folder_path, "")
+csv_file_2 = os.path.join(folder_path, "")
+json_file = os.path.join(folder_path, "")
 
 # Lire les fichiers CSV en utilisant des guillemets pour délimiter les champs et en ignorant les lignes incorrectes
 df_csv_1 = pd.read_csv(csv_file_1, delimiter=';', quotechar='"', skipinitialspace=True, encoding='utf-8', on_bad_lines='skip')
