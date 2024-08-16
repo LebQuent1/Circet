@@ -1,4 +1,4 @@
-# Projet d'envois des informations et Images d'interventions vers l'API GoPass
+# Projet d'envois des informations et Images d'interventions vers l'API 
 
 ## Description
 
@@ -23,10 +23,10 @@ Coordonne l'exécution des différents scripts du projet.
 
 ### 2. `all_csvpython.py`
 **Fonction :**  
-Télécharge les nouvelles données d'intervention à partir des inter présentes sur ARD2.
+Télécharge les nouvelles données d'intervention à partir des inter présentes sur .
 
 **Fonctionnement :**  
-- Se connecte à ARD2.
+- Se connecte à .
 - Remplit les champs de date pour filtrer les interventions.
 - Télécharge un fichier CSV contenant les interventions de la journée et les traite ( adaptable dans le code pour limiter la période ou choisir une autre journée).
 
@@ -35,8 +35,8 @@ Télécharge les nouvelles données d'intervention à partir des inter présente
 Télécharge les images associées aux interventions.
 
 **Fonctionnement :**  
-- Se connecte à ARD2 pour récupérer les images liées à chaque intervention.
-- Télécharge les images dans un dossier spécifique sous `tempo/Download_ARD2`.
+- Se connecte à  pour récupérer les images liées à chaque intervention.
+- Télécharge les images dans un dossier spécifique sous `tempo/Download`.
 - Associe chaque image avec son intervention respective en les enregistrants dans des dossiers nommés par le num_inter.
 - Récupère les numéros des PTO de chaques inter( à supprimer pour l'API a terme)
 
@@ -54,7 +54,7 @@ Renomme les images téléchargées en fonction des informations contenues dans l
 
 **Fonctionnement :**  
 - Lit le fichier CSV pour obtenir les nouveaux noms des images.
-- Renomme les images dans le dossier `tempo/Download_ARD2` en fonction des informations du CSV.
+- Renomme les images dans le dossier `tempo/Download` en fonction des informations du CSV.
 
 ### 6. `scriptJsonFormat.py`
 **Fonction :**  
@@ -71,7 +71,7 @@ Envoie les informations des interventions à une API via une requête POST.
 
 **Fonctionnement :**  
 - Lit le fichier JSON généré par `scriptJsonFormat.py`.
-- Envoie les données d'intervention à l'API GoPass.
+- Envoie les données d'intervention à l'API .
 
 
 ### 8. `testRequeteDonnePhoto.py`
@@ -79,7 +79,7 @@ Envoie les informations des interventions à une API via une requête POST.
 Prépare les données des photos d'intervention puis les envois à l'API.
 
 **Fonctionnement :**  
-- Récupère les images associées aux interventions dans `tempo/Download_ARD2`.
+- Récupère les images associées aux interventions dans `tempo/Download`.
 - Envois les données des photos à l'API.
 
 ### 9. `testrequetePHOTO.py`
@@ -87,8 +87,8 @@ Prépare les données des photos d'intervention puis les envois à l'API.
 Envoie les photos des interventions à une API via une requête POST (envois des photos 1 par 1, imposé par la requête fournis).
 
 **Fonctionnement :**  
-- Parcourt le dossier `tempo/Download_ARD2` pour trouver les images.
-- Envoie chaque image à GoPass.
+- Parcourt le dossier `tempo/Download` pour trouver les images.
+- Envoie chaque image à l'API.
 - Supprime les dossiers d'intervention une fois les photos envoyées avec succès pour éviter de trop stocker en local.
 
 ## Utilisation
