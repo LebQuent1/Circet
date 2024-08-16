@@ -8,8 +8,7 @@ from bs4 import BeautifulSoup
 import configparser
 
 def log():
-    config = configparser.ConfigParser()
-    config.read('config.ini')
+    
     identifiant = ''
     password = ''
     return identifiant, password
@@ -36,11 +35,11 @@ def scrap_nom(input_csv_path, download_directory, output_csv_path):
 
     def login_to_site(driver):
         print("Logging in to the site...")
-        driver.get("https://aboracco.vlq16.iliad.fr/desk/#/auth")
+        driver.get("")
         identifiant, password = log()
-        identifiant_textfield = driver.find_element(By.ID, "user_login")
-        password_textfield = driver.find_element(By.ID, "user_password")
-        login_button = driver.find_element(By.CLASS_NAME, "options__button")
+        identifiant_textfield = driver.find_element(By.ID, "")
+        password_textfield = driver.find_element(By.ID, "")
+        login_button = driver.find_element(By.CLASS_NAME, "")
         time.sleep(3)  # Augmenté à 3 secondes
         identifiant_textfield.send_keys(identifiant)
         time.sleep(3)  # Augmenté à 3 secondes
@@ -67,7 +66,7 @@ def scrap_nom(input_csv_path, download_directory, output_csv_path):
     data = []
     for inter in df['Référence']:
         print(f"Processing intervention {inter}...")
-        driver.execute_script(f"window.open('https://aboracco.vlq16.iliad.fr/desk/#/intervention/{str(inter)}/historique');")
+        driver.execute_script(f"window.open('")
         time.sleep(5)  # Attente supplémentaire pour l'ouverture de la page
         driver.switch_to.window(driver.window_handles[-1])
         document_names = download_document_names(driver, inter)
